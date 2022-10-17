@@ -20,11 +20,28 @@
 
 <body>
 
+    <h1></h1>
+
     <h1>Iniciando estudos DOM</h1>
     <P>Aqui vai o resultado</P>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
     <script>
         document.write(`<br> Tamo aí!`)
+
+        var p1 = window.document.getElementsByTagName(`p`)[0];
+        //
+        window.document.write(`<br><br> ${p1.innerHTML}`);
+        p1.style.color=`blue`; 
+
+        var msg=window.document.getElementById(`msg`);
+        window.document.write(`<br><br> ${msg.innerHTML}`);
+
+        msg.innerHTML=`Estou aguardando`;
+        /*Utilizando o comando completo fica: window.document.getElementsById(`msg`).innerHTML=`Estou aguardando`;*/
+
+        var q= window.document.querySelector(`div#msg`);
+        q.style.color=`red`;
+        
     </script>
     
 </body>

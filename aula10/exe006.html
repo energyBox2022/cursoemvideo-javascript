@@ -35,6 +35,14 @@
 
     <script>
 
+        /*
+        Maneira direta de se fazer o link entre a função e o elemento
+        var a=window.document.getElementById(`area`)
+        a.addEventListener(`click`, clicar)
+        a.addEventListener(`mouseenter`, clicar)
+        a.addEventListener(`mouseout`, clicar)
+        */
+
         function clicar() {
             var click=window.document.getElementById(`area`);
             click.innerText=`Clicou!`;

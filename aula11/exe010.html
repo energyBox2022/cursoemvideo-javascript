@@ -26,22 +26,24 @@
 
     <h1>Sistema de Multas</h1>
 
-    Velocidade do carro: <input type="number" name="km" id="km"> km/h 
-    <input type="button" value="Verificar" onclick="res()">
+    Velocidade do veículo: <input type="number" name="vel" id="vel"> Km/h <input type="button" value="Analisar" onclick="calcular()">
+
+    <div id="speed"></div>
 
     <script>
-        function res(){
-            var n1 = window.document.querySelector(`input#km`);
-            document.write(n1);
-        }
-    </script>
-
-
-
-
+        var n1 = window.document.querySelector(`input#vel`);
+        var n2 = Number(n1.value);
+        var n3 = window.document.querySelector(`div#speed`);
         
-   
 
+
+    </script>
     
 </body>
+
+
+
+
+
+
 </html>

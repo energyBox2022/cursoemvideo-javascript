@@ -76,8 +76,8 @@
             <h2>Bom Dia!</h2>
         </div>
 
-        <div id="imagem">
-            <img src="imagens/manha.png" alt="">
+        <div id="img">
+            <img src="imagens/" alt="fotos horario do dia">
         </div>
 
     </section>
@@ -96,18 +96,18 @@
             var img = window.document.getElementById(`img`);
             var data = new Date();
             //var hora = data.getHours();
-            var hora = 13
+            var hora = 13;
             msg.innerHTML = `Agora são ${hora} horas!`;
 
             if(hora >= 0 && hora < 12){
                 //Bom dia!
-                img.src = `imagens/manha.png`
+                img.src = 'imagens/manha.png'
             } else if(hora >= 12 && hora < 18){
                 //Boa tarde!
-                img.src = `imagens/tarde.png`
+                img.src = 'imagens/tarde.png'
             } else{
                 //Boa noite!
-                img.src = `imagens/noite.png`
+                img.src = 'imagens/noite.png'
             }
 
 

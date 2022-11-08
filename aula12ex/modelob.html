@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia!</title>
+
+    <style>
+        body{
+            background: rgb(23, 70, 162);
+        }
+
+        header > h1{
+            color: rgb(255, 115, 29);
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(255, 247, 233);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            color: rgb(23, 70, 162);
+            font-size: 1.3em;
+        }
+
+        footer > p{
+            text-align: center;
+            color: rgb(255, 115, 29);
+        }
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+</head>
+
+
+<body onload="carregar()">
+
+    <header>
+        <h1>Bom dia!</h1>
+    </header>
+
+    <section>
+        <div>
+            <p id="msg"></p>
+        </div>
+
+        <div>
+            <img id="foto" src="imagens/manha.png" alt="">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Cursoemvídeo</p>
+    </footer>
+
+    <script>
+        function carregar(){
+            var msg = window.document.getElementById(`msg`);
+            var img = window.document.getElementById(`foto`);
+            var date = new Date();
+            var hora = date.getHours();
+            
+            
+            msg.innerHTML = `Agora são ${hora} horas!`
+
+            if(hora > 0 && hora <=12){
+                //Bom Dia!
+                img.src = `imagens/manha.png`;
+                document.body.style.background = `#7DE5ED`;
+                
+            }else if(hora > 12 && hora <=18){
+                //Boa Tarde!
+                img.src = `imagens/tarde.png`;
+                document.body.style.background = `#E94560`;
+            }else{
+                //Boa Noite!
+                img.src = `imagens/noite.png`;
+                document.body.style.background = `#0F3460`;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+
+</html>

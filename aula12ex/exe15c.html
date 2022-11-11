@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        body{
+            background-color: rgb(11, 64, 156);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(253, 190, 52);
+        }
+
+        header > h1{
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(242, 247, 255);
+            color: rgb(16, 49, 107);
+            padding: 15px;
+            border-radius: 15px;
+            width: 500px;
+            margin: auto;
+
+        }
+
+        footer{
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <section>
+
+        <div>
+            <p>
+                Ano de nascimento: <input type="number" name="txtin" id="txtin">
+            </p>
+            <p>Sexo:
+                <input type="radio" name="sexo" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="sexo" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <input type="button" value="Verificar" onclick="verificar()">
+
+        </div>
+
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado!</p>
+
+        </div>
+
+
+        <script>
+            function verificar(){
+                var data = new Date()
+                var ano = data.getFullYear()
+                var entrada = window.document.getElementById(`txtin`)
+                var resultado = window.document.getElementById(`res`)
+
+
+                if(entrada.value.length == 0 || Number(entrada.value) > ano){
+                    window.alert(`ERRO!Verifique os dados e tente novamente.`)
+                }
+            }
+
+        </script>
+
+
+
+
+    </section>
+
+    <footer>
+        <p>
+            &copy;CursoemVídeo
+        </p>
+    </footer>
+
+    
+</body>
+
+</html>

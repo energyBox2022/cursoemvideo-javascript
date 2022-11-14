@@ -6,38 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de Idade</title>
 
-    <style>
 
+    <style>
         body{
-            background-color: rgb(253, 132, 31);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(55, 41, 72);
         }
 
-        header{
+        header > h1{
+            color: rgb(255, 236, 239);
             text-align: center;
-            color: rgb(0, 18, 83);
         }
 
         section{
             width: 500px;
             margin: auto;
-            background-color: rgb(225, 77, 42);
+            background-color: rgb(255, 202, 202);
             border-radius: 15px;
             padding: 15px;
-            color: rgb(0, 18, 83);
+            color: rgb(37, 27, 55);
         }
 
-        footer{
-            color: rgb(62, 109, 156);
+        footer > p{
+            color: rgb(255, 236, 239);
             text-align: center;
         }
+
+
 
     </style>
 
 
 
 
+
 </head>
+
 
 
 <body>
@@ -69,7 +73,7 @@
             <p id="res">
                 Preencha os dados acima para ver o resultado!
             </p>
-            
+
         </div>
 
         <script>
@@ -90,15 +94,15 @@
                     }else if(fsex[1].checked){
                         genero = `feminino`
                     }
-                    res.innerHTML = `A idade calculada é de ${idade} anos e o gênero escolhido foi o ${genero}.`
-
-
-                } 
+                    res.innerHTML = `A idade calculada é de ${idade} anos e o genero selecionado é o ${genero}.`
+                    
+                    
+                }
 
             }
         </script>
 
-        
+
     </section>
 
 
@@ -106,10 +110,6 @@
     <footer>
         <p>&copy; CursoemVídeo</p>
     </footer>
-
-
     
 </body>
-
-
 </html>

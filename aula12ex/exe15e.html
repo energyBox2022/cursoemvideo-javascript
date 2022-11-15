@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(0, 2, 73);
+        }
+
+        header > h1{
+            color: rgb(246, 73, 13);
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(250, 249, 240);
+            color: rgb(0, 2, 73);
+            border-radius: 15px;
+            width: 500px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        footer{
+            color: rgb(29, 206, 216);
+            text-align: center;
+        }
+
+
+
+    </style>
+
+
+
+</head>
+
+
+
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+
+    <section>
+        <div>
+            <p>Ano de nascimento: <input type="number" name="txtin" id="txtin"></p>
+
+            <p>
+                Sexo:
+                <input type="radio" name="fsex" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="fsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <input type="button" value="Verificar" onclick="calcular()">    
+        </div>
+
+        <div>
+            <p id="resp">
+                Preencha os dados acima para ver o resultado!
+            </p>
+        </div>
+    
+        <script>
+            function calcular(){
+                var data = new Date()
+                var ano = data.getFullYear()
+                var fano = window.document.getElementById(`txtin`)
+                var res = window.document.getElementById(`resp`)
+
+                if(fano.value.length == 0 || Number(fano.value) > ano){
+                window.alert(`Erro! Tente novamente.`)
+            }else{
+                var idade = ano - Number(fano.value)
+                var gen = window.document.getElementsByName(`fsex`)
+                
+                
+            }
+
+            res.innerHTML = `A idade calculada é ${idade} e o gênero é ${gen}.`
+
+
+            }
+        </script>
+
+
+
+    </section>
+
+
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    
+</body>
+
+
+</html>

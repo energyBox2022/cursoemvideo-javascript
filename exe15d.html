@@ -48,6 +48,7 @@
 
     <header>
         <h1>Verificador de Idade</h1>
+        <img src="foto-crianca-mas.jpg" alt="">
     </header>
 
 
@@ -89,12 +90,22 @@
                     var idade = ano - Number(fano.value)
                     var fsex = window.document.getElementsByName(`radsex`)
                     var genero = ``
+                    var img = document.createElement(`img`)
+                    img.setAttribute(`id`,`foto`)
                     if(fsex[0].checked){
                         genero = `masculino`
+                        if(idade <= 10){
+
+                            img.setAttribute(`src`,`foto_c_m.png`)
+                            
+                        }
+                        
                     }else if(fsex[1].checked){
                         genero = `feminino`
                     }
-                    res.innerHTML = `A idade calculada é de ${idade} anos e o genero selecionado é o ${genero}.`
+                    resp.innerHTML = `Idade  de ${idade} anos, genero ${genero}.`
+                    resp.style.textAlign = `center`
+                    resp.appendChild(img)
                     
                     
                 }

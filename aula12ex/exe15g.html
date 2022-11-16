@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        body{
+            background-color: rgb(184, 59, 94);
+            font-family:  'Arial Narrow Bold', sans-serif;
+            font-weight: 100;
+        }
+
+        header > h1{
+            color: rgb(249, 237, 105);
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(240, 138, 93);
+            padding: 15px;
+            border-radius: 15px;
+            color: rgb(106, 44, 112);
+            box-shadow: 7px 7px 12px  ;
+            width: 500px;
+            margin: auto;
+        }
+
+        footer{
+            color: rgb(249, 237, 105);
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<header>
+    <h1>Verificador de Idade</h1>
+</header>
+
+<section>
+    <div>
+        <p>Ano de Nascimento: <input type="number" name="txtin" id="txtin"></p>
+    </div>
+    <div>
+        <p>
+            Sexo:
+            <input type="radio" name="radiosex" id="mas" checked>
+            <label for="mas">Masculino</label>
+            <input type="radio" name="radiosex" id="fem">
+            <label for="fem">Feminino</label>
+        </p>
+        <input type="button" value="Veificar" onclick="verificar()">
+    </div>
+    <div>
+        <p id="res">Preencha os dados acima para ver o resultado!</p>
+    </div>
+
+    <script>
+        function verificar(){
+            var date = new Date()
+            var ano = date.getFullYear()
+            var fano = window.document.getElementById(`txtin`)
+            var resp = window.document.getElementById(`res`)
+
+            
+
+            if(fano.value.length == 0 || Number(fano.value) > ano){
+                window.alert(`Erro! Tente novamente.`)
+
+            }else{
+                    var sex = window.document.getElementsByName(`radiosex`)
+                    var idade = ano - Number(fano.value)
+                    var genero = ``
+                    var img = document.createElement(`img`)
+                    img.setAttribute(`id`,`foto`)
+
+
+                    if(sex[0].checked && idade < 10){
+                        var ind = `criança`
+                        genero = `masculino`
+                        img.setAttribute(`src`,`foto-crianca-mas.jpg`)
+                    }
+                
+            }
+
+            resp.innerHTML = `A idade do indivíduo (${ind}) é de ${idade} anos e do gênero ${genero}.`
+            resp.style.textAlign = `center`
+            resp.appendChild(img)
+
+        }
+
+
+    </script>
+
+
+
+</section>
+
+<footer>
+    <p>&copy; CursoemVídeo</p>
+</footer>
+
+<body>
+    
+</body>
+</html>

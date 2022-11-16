@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        body{
+            background-color: rgb(13, 115, 119);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: lighter;
+        }
+
+        header > h1{
+            color:rgb(20, 255, 236);
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(20, 255, 236);
+            padding: 15px;
+            border-radius: 15px;
+            color: rgb(33, 33, 33);
+            box-shadow: 5px 5px 8px black;
+            width: 500px;
+            margin: auto;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+
+
+
+
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>Ano de nascimento: <input type="number" name="txtano" id="txtano"></p>
+            
+        </div>
+
+        <div>
+            <p>
+                Sexo:
+                <input type="radio" name="radiosex" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radiosex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado!</p>
+        </div>
+
+        <script>
+            function verificar(){
+                var date = new Date()
+                var ano = date.getFullYear()
+                var fano = window.document.getElementById(`txtano`)
+
+                if(fano.value.lenght == 0 || Number(fano.value) > ano){
+                    window.alert(`Erro! Confira os dados e tente novamente`)
+                }else{
+                    var sex = window.document.getElementsByName(`radiosex`)
+                    var idade = ano - Number(fano.value)
+                    var genero = ``
+                    var pessoa = ``
+
+                    var img = document.createElement(`img`)
+                    img.setAttribute(`id`,`foto`)
+
+
+                    if(sex[0].checked  && idade <= 10){
+                        genero = `masculino`
+                        pessoa = `criança`
+                        img.setAttribute(`src`,`foto-crianca-mas.jpg`)
+                        
+                    }
+                    else if(sex[0].checked && 10 < idade <= 28){
+                        genero = `maculino`
+                        pessoa = `jovem`
+                        img.setAttribute(`src`,`foto-jovem-mas.jpg`)
+                    }
+                    else if(sex[0].checked && idade < 150){
+                        genero = `masculino`
+                        pessoa = `adulta`
+                        img.setAttribute(`src`,`foto-adulto-mas.jpg`)
+                    }
+
+
+                }
+
+                res.innerHTML = `A idade calculada é de ${idade} anos, trata-e de uma pessoa que é ${pessoa} e o gênero é ${genero}.<br><br>` 
+                res.style.textAlign = `center`
+                res.appendChild(img)
+                
+
+
+            }
+        </script>
+
+
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+
+    
+</body>
+
+</html>

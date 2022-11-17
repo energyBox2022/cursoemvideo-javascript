@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        body{
+            background-color: rgb(33, 70, 199);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(230, 203, 168);
+        }
+
+        header > h1{
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(0, 8, 193);
+            padding: 15px;
+            border-radius: 15px;
+            width: 500px;
+            margin: auto;
+        }
+
+        footer > p{
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>
+            Verificador de Idade
+        </h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Ano de Nascimento: <input type="number" name="tex_in" id="tex_in">
+            </p>
+            <p>
+                Sexo:
+                <input type="radio" name="radiosex" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radiosex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div>
+            <p id="res">Preencha os dados acima para ver o resultado!</p>
+        </div>
+
+        <script>
+            function verificar(){
+                var date = new Date()
+                var ano = date.getFullYear()
+                var fano = window.document.getElementById(`tex_in`)
+
+
+                if(fano.value.lenght == 0 || Number(fano.value) > ano){
+                    window.alert(`Erro! Verifique os dados e tente novamente.`)
+                }else{
+                    var idade = ano - Number(fano.value)
+                    var resp = window.document.getElementById(`res`)
+                    var sex = window.document.getElementsByName(`radiosex`) 
+                    var genero = ``
+                    var etaria = ``
+                    var img = window.document.createElement(`img`)
+                    
+
+                    if(sex[0].checked && idade < 10){
+                        genero = `masculino`
+                        var etaria = `criança`
+                        img.setAttribute(`src`,`foto_c_m.png`)
+                    } else if(idade < 18){
+                        genero = `masculino`
+                        etaria = `jovem`
+                        img.setAttribute(`src`,`foto-jovem-mas.jpg`)
+                    } else if(idade < 60){
+                        genero = `masculino`
+                        etaria = `adulto`
+                        img.setAttribute(`src`,`foto-adulto-mas.jpg`)
+                    } else if(idade >= 60){
+                        genero = `masculino`
+                        etaria = `idosa`
+                        img.setAttribute(`src`,`foto-idoso-mas.jpg`)
+                    }
+                    
+                }
+
+                if(sex[1].checked && idade < 10){
+                        genero = `feminino`
+                        var etaria = `criança`
+                        img.setAttribute(`src`,`foto-crianca-fem.jpg`)
+                    } else if(idade < 18){
+                        genero = `feminino`
+                        etaria = `jovem`
+                        img.setAttribute(`src`,`foto-jovem-fem.jpg`)
+                    } else if(idade < 60){
+                        genero = `feminino`
+                        etaria = `adulto`
+                        img.setAttribute(`src`,`foto-adulto-fem.jpg`)
+                    } else if(idade >= 60){
+                        genero = `feminino`
+                        etaria = `idosa`
+                        img.setAttribute(`src`,`foto-idoso-fem.jpg`)
+                    }
+
+                resp.innerHTML = `A idade calculada foi de ${idade} anos e o gênero selecionado foi o ${genero}, trata-se de uma pessoa que é  ${etaria}. <br><br>`
+                resp.style.textAlign = `center`
+                resp.style.color = `#E14D2A`
+                resp.appendChild(img)
+
+            }
+        </script>
+
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+
+
+    
+</body>
+</html>

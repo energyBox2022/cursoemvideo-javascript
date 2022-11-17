@@ -81,39 +81,41 @@
                         genero = `masculino`
                         var etaria = `criança`
                         img.setAttribute(`src`,`foto_c_m.png`)
-                    } else if(idade < 18){
+                    } else if(sex[0].checked && idade < 18){
                         genero = `masculino`
                         etaria = `jovem`
                         img.setAttribute(`src`,`foto-jovem-mas.jpg`)
-                    } else if(idade < 60){
+                    } else if(sex[0].checked && idade < 60){
                         genero = `masculino`
                         etaria = `adulto`
                         img.setAttribute(`src`,`foto-adulto-mas.jpg`)
-                    } else if(idade >= 60){
+                    } else if(sex[0].checked && idade >= 60){
                         genero = `masculino`
                         etaria = `idosa`
                         img.setAttribute(`src`,`foto-idoso-mas.jpg`)
                     }
-                    
-                }
 
-                if(sex[1].checked && idade < 10){
+                    if(sex[1].checked && idade < 10){
                         genero = `feminino`
                         var etaria = `criança`
                         img.setAttribute(`src`,`foto-crianca-fem.jpg`)
-                    } else if(idade < 18){
+                    } else if(sex[1].checked && idade < 18){
                         genero = `feminino`
                         etaria = `jovem`
                         img.setAttribute(`src`,`foto-jovem-fem.jpg`)
-                    } else if(idade < 60){
+                    } else if(sex[1].checked && idade < 60){
                         genero = `feminino`
                         etaria = `adulto`
                         img.setAttribute(`src`,`foto-adulto-fem.jpg`)
-                    } else if(idade >= 60){
+                    } else if(sex[1].checked && idade >= 60){
                         genero = `feminino`
                         etaria = `idosa`
                         img.setAttribute(`src`,`foto-idoso-fem.jpg`)
                     }
+                    
+                }
+
+
 
                 resp.innerHTML = `A idade calculada foi de ${idade} anos e o gênero selecionado foi o ${genero}, trata-se de uma pessoa que é  ${etaria}. <br><br>`
                 resp.style.textAlign = `center`

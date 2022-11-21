@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        body{
+            background-color: rgb(20, 63, 107);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        header > h1{
+            text-align: center;
+            color: rgb(245, 83, 83);
+        }
+
+        section{
+            background-color: rgb(254, 177, 57);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 8px black;
+            width: 500px;
+            margin: auto;
+        }
+
+        footer > p{
+            color: rgb(246, 245, 77);
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <section>
+        <div>
+                <p>Ano de Nascimento: <input type="number" name="tex_in" id="tex_in"></p>
+
+                Sexo:
+            <input type="radio" name="radiosex" id="mas" checked>
+            <label for="mas">Masculino</label>
+            <input type="radio" name="radiosex" id="fem">
+            <label for="fem">Feminino</label>
+            <p><input type="button" value="Verificar" onclick="verificar()"></p>
+        </div>
+        <div id="resp">
+            <p>Preencha os dados acima para ver o resultado.</p>
+        </div>
+
+        <script>
+            function verificar(){
+                var date = new Date()
+                var ano = date.getFullYear()
+                var fano = window.document.getElementById(`tex_in`)
+
+                if(fano.value.lenght < 0 || Number(fano.value) > ano){
+                    window.alert(`Erro! Tente novamente.`)
+                }else{
+                    var sex = window.document.getElementsByName(`radiosex`)
+                    var idade = ano - Number(fano.value)
+                    var res = window.document.getElementById(`resp`)
+                    var genero = ``
+                    var etaria = ``
+                    var imagem = document.createElement(`img`)
+
+                    if(sex[0].checked && idade <= 12){
+                        genero = `masculino`
+                        etaria = `ainda criança`
+                        imagem.setAttribute(`src`,`foto-crianca-mas.jpg`)
+                    }else if(sex[1].checked && idade <= 12){
+                        genero = `feminino`
+                        etaria = `ainda criança`
+                        imagem.setAttribute(`src`,`foto-crianca-fem.jpg`)
+                    }
+
+                    else if(sex[0].checked && idade <= 18){
+                        genero = `masculino`
+                        etaria = `jovem`
+                        imagem.setAttribute(`src`,`foto-jovem-mas.jpg`)
+                    }else if(sex[1].checked && idade <= 18){
+                        genero = `feminino`
+                        etaria = `jovem`
+                        imagem.setAttribute(`src`,`foto-jovem-fem.jpg`)
+                    }
+
+                    else if(sex[0].checked && idade <= 60){
+                        genero = `masculino`
+                        etaria = `adulta`
+                        imagem.setAttribute(`src`,`foto-adulto-mas.jpg`)
+                    }else if(sex[1].checked && idade <= 60){
+                        genero = `feminino`
+                        etaria = `adulta`
+                        imagem.setAttribute(`src`,`foto-adulto-fem.jpg`)
+                    }
+
+                    else if(sex[0].checked && idade > 60){
+                        genero = `masculino`
+                        etaria = `idosa`
+                        imagem.setAttribute(`src`,`foto-idoso-mas.jpg`)
+                    }else if(sex[1].checked && idade > 60){
+                        genero = `feminino`
+                        etaria = `idosa`
+                        imagem.setAttribute(`src`,`foto-idoso-fem.jpg`)
+                    }
+
+                    res.innerHTML = `O gênero selecionado foi o ${genero} e a idade calculada foi de ${idade} anos, trata-se de uma pessoa ${etaria}.<br><br>`
+                    res.style.textAlign = `center`
+                    res.appendChild(imagem)
+                    
+                }
+            }
+
+        </script>
+
+
+
+
+    </section>
+
+    <footer>
+        <p>
+            &copy;CursoemVídeo
+        </p>
+    </footer>
+    
+</body>
+</html>

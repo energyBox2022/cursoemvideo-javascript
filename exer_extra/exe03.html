@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar valores em ordem crescente</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>
+            Digite 3 valores inteiros para serem ordenados em ordem crescente:
+        </h1>
+    </header>
+
+    <section>
+        <div>
+            Primeiro valor: <input type="number" name="txt" id="txt1"><br><br>
+            Segundo valor: <input type="number" name="txt" id="txt2"><br><br>
+            Terceiro valor: <input type="number" name="txt" id="txt3"><br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res"></div>
+
+        <script>
+            function verificar(){
+                var val1 = window.document.getElementById(`txt1`)
+                var val2 = window.document.getElementById(`txt2`)
+                var val3 = window.document.getElementById(`txt3`)
+                var resp = window.document.getElementById(`res`)
+                var resl = ``
+
+                if(parseInt(val1.value) > parseInt(val2.value) && parseInt(val2.value) > parseInt(val3.value)){
+                    resl = `Os valores em ordem decrescente são ${Number(val1.value)}, ${Number(val2.value)} e ${Number(val3.value)}`
+                }else if(parseInt(val1.value) > parseInt(val3.value) && parseInt(val3.value) > parseInt(val2.value)){
+                    resl = `Os valores em ordem decrescente são ${Number(val1.value)}, ${Number(val3.value)} e ${Number(val2.value)}`
+                }else if(parseInt(val2.value) > parseInt(val1.value) && parseInt(val1.value) > parseInt(val3.value)){
+                    resl = `Os valores em ordem decrescente são ${Number(val2.value)}, ${Number(val1.value)} e ${Number(val3.value)}`
+                }else if(parseInt(val2.value) > parseInt(val3.value) && parseInt(val3.value) > parseInt(val1.value)){
+                    resl = `Os valores em ordem decrescente são ${Number(val2.value)}, ${Number(val3.value)} e ${Number(val1.value)}`
+                }else if(parseInt(val3.value) > parseInt(val1.value) && parseInt(val1.value) > parseInt(val2.value)){
+                    resl = `Os valores em ordem decrescente são ${Number(val3.value)}, ${Number(val1.value)} e ${Number(val2.value)}`
+                }else{
+                    resl = `Os valores em ordem decrescente são ${Number(val3.value)}, ${Number(val2.value)} e ${Number(val1.value)}`
+                }
+
+                resp.innerHTML = `${resl}`
+            }
+        </script>
+    </section>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite 5 números para que seja exibido o número de maior valor</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Digite 5 números para que seja exibido o número de maior valor
+        </h1>
+    </header>
+
+    <section>
+        <div>
+            Valor 1: <input type="number" name="txt" id="txt1"><br><br>
+            Valor 2: <input type="number" name="txt" id="txt2"><br><br>
+            Valor 3: <input type="number" name="txt" id="txt3"><br><br>
+            Valor 4: <input type="number" name="txt" id="txt4"><br><br>
+            Valor 5: <input type="number" name="txt" id="txt5"><br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res"></div>
+
+        <script>
+            function verificar(){
+                var val1 = window.document.getElementById(`txt1`)
+                var val2 = window.document.getElementById(`txt2`)
+                var val3 = window.document.getElementById(`txt3`)
+                var val4 = window.document.getElementById(`txt4`)
+                var val5 = window.document.getElementById(`txt5`)
+                var resp = window.document.getElementById(`res`)
+                var resl = ``
+
+                if(Number(val1.value) > Number(val2.value) && Number(val1.value) > Number(val3.value) && Number(val1.value) > Number(val4.value) && Number(val1.value) > Number(val5.value)){
+                    resl = `O número de maior valor é o ${Number(val1.value)}`
+                }else if(Number(val2.value) > Number(val1.value) && Number(val2.value) > Number(val3.value) && Number(val2.value) > Number(val4.value) && Number(val2.value) > Number(val5.value)){
+                    resl = `O número de maior valor é o ${Number(val2.value)}`
+                }else if(Number(val3.value) > Number(val1.value) && Number(val3.value) > Number(val2.value) && Number(val3.value) > Number(val4.value) && Number(val3.value) > Number(val5.value)){
+                    resl = `O número de maior valor é o ${Number(val3.value)}`
+                }else if(Number(val4.value) > Number(val1.value) && Number(val4.value) > Number(val2.value) && Number(val4.value) > Number(val3.value) && Number(val4.value) > Number(val5.value)){
+                    resl = `O número de maior valor é o ${Number(val4.value)}`
+                }else if(Number(val5.value) > Number(val1.value) && Number(val5.value) > Number(val2.value) && Number(val5.value) > Number(val3.value) && Number(val5.value) > Number(val4.value)){
+                    resl = `O número de maior valor é o ${Number(val5.value)}`
+                }
+
+                resp.innerHTML = `${resl}`
+            }
+
+        </script>
+
+
+
+    </section>
+
+    
+</body>
+</html>

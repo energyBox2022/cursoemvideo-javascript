@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Case</title>
+
+
+</head>
+
+
+<body>
+    <hader>
+        <h1>Exemplo Case</h1>
+    </hader>
+
+    <section>
+        <div>
+            <p>Escolha um dia da semana:</p>
+            <input type="radio" name="sem" id="dom" checked>
+            <label for="dom">Domingo</label><br>
+            <input type="radio" name="sem" id="seg">
+            <label for="seg">Segunda</label><br>
+            <input type="radio" name="sem" id="ter">
+            <label for="ter">Terça</label><br>
+            <input type="radio" name="sem" id="qua">
+            <label for="qua">Quarta</label><br>
+            <input type="radio" name="sem" id="qui">
+            <label for="qui">Quinta</label><br>
+            <input type="radio" name="sem" id="sex">
+            <label for="sex">Sexta</label><br>
+            <input type="radio" name="sem" id="sab">
+            <label for="sab">Sábado</label><br><br>
+            <input type="button" value="Enviar" onclick="verificar()">
+        </div>
+        <div id="res">
+
+        </div>
+
+        <script>
+            function verificar(){
+                var week = window.document.getElementsByName(`sem`)
+                var dia = window.document.getElementById(`res`)
+                var escolhido = ``
+                
+                if(week[0].checked){
+                    escolhido = `domingo`
+                }else if(week[1].checked){
+                    escolhido = `segunda`
+                }else if(week[2].checked){
+                    escolhido = `terça`
+                }else if(week[3].checked){
+                    escolhido = `quarta`
+                }else if(week[4].checked){
+                    escolhido = `quinta`
+                }else if(week[5].checked){
+                    escolhido = `sexta`
+                }else if(week[6].checked){
+                    escolhido = `sábado`
+                }
+
+                dia.innerHTML = `<br> Escolheu-se o dia de ${escolhido} da semana`
+
+            }
+        </script>
+    </section>
+
+
+    
+</body>
+</html>

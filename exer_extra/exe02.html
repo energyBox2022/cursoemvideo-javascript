@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <Header>
+        <h1>Cálculo do produto dos sinais de 3 números inteiros:</h1>
+    </Header>
+
+    <section>
+        <div>
+            Digite o primeiro valor: <input type="number" name="pri" id="pri"><br><br>
+            Digite o segundo valor: <input type="number" name="seg" id="seg"><br><br>
+            Digite o terceiro valor: <input type="number" name="ter" id="ter"><br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+
+        </div>
+        <div id="res"></div>
+    </section>
+
+    <script>
+        function verificar(){
+            var um = window.document.getElementById(`pri`)
+            var dois = window.document.getElementById(`seg`)
+            var tres = window.document.getElementById(`ter`)
+            var resp = window.document.getElementById(`res`)
+            var cal = parseInt(um.value)*parseInt(dois.value)*parseInt(tres.value)
+            var resu = ``
+
+            if(cal < 0){
+                resu = `negativo`
+            }else{
+                resu = `positivo`
+            }
+
+            resp.innerHTML = `<br>O valor do produto é ${resu}.`
+        }
+    </script>
+
+
+    
+</body>
+</html>

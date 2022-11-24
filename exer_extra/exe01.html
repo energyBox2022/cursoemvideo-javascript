@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre com dois inteiro e o maior será exibido</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>Entre com dois inteiro e o maior será exibido:</h1>
+    </header>
+
+    <section>
+        <div>
+            Inteiro 1: <input type="number" name="inta" id="int1"><br><br>
+            Inteiro 2: <input type="number" name="intb" id="int2"><br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res"></div>
+    </section>
+
+    <script>
+        function verificar(){
+            var txt_in1 = window.document.getElementById(`int1`)
+            var txt_in2 = window.document.getElementById(`int2`)
+            var int1 = parseInt(txt_in1.value)
+            var int2 = parseInt(txt_in2.value)
+            var resp = window.document.getElementById(`res`)
+            var resultado = ``
+
+            if(int1 == int2){
+                window.alert(`Erro! Digite valores de inteiros diferentes.`)
+            }else if(int1 > int2){
+                resultado = `O inteiro de maior valor é o ${int1}.`
+            }else if(int2 > int1){
+                resultado = `O inteiro de maior valor é o ${int2}`
+            }
+
+            resp.innerHTML = `<br>${resultado}`
+        }
+
+
+    </script>
+
+
+    
+</body>
+</html>

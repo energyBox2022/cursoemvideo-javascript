@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Multas</title>
+
+    <style>
+        body{
+            background-color: rgb(243, 203, 165);
+        }
+    </style>
+
+    
+
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Sistema de Multas</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Velocidade do carro: <input type="number" name="velocidade" id="velocidade"> km/h <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+
+        </div>
+
+
+        <script>
+
+            function verificar(){
+
+                var vel = window.document.getElementById(`velocidade`)
+                var speed = Number(vel.value)
+                var resp = window.document.getElementById(`res`)
+                var resu = ``
+
+                if(speed <= 60){
+                    resu = `Sua velocidade é de ${speed}km/h, tenha um bom dia!`
+                }else{
+                    resu = `Sua velocidade é de ${speed}km/h, ultrapassando o limite máximo de 60km/h, por este motivo você foi multado.`
+                }
+
+                resp.innerHTML = `${resu}`
+
+            }
+
+
+            
+
+
+
+
+
+
+
+        </script>
+
+
+    </section>
+
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador par/ímpar</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>Exercício 5b</h1>
+        <div>
+            <p>
+                Escreva um loop JavaScript for que irá iterar de 0 a 15. Para cada iteração, ele verificará se o número atual é par ou ímpar e exibirá uma mensagem na tela.
+            </p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res"></div>
+
+        <script>
+            function verificar(){
+
+                var i
+                resp = window.document.getElementById(`res`)
+
+                for(i = 0; i <= 15; i++){
+                    if(i === 0){
+                        resl = `valor par`
+                          
+                    }else if(i % 2 === 0){
+                        resl = `valor par`
+                        
+                    }else{
+                        resl = `valor ímpar`
+                        
+                    }
+
+                    resp.innerHTML += `O número ${i} é um ${resl}.<br>`
+
+                }
+
+                
+            }
+        </script>
+
+    </header>
+
+    
+</body>
+</html>

@@ -23,14 +23,16 @@
         <script>
             function imprimir(){
                 var txt_f = window.document.getElementById(`txt_in`)
-                var cond = (Number(txt_f.value)) - (Number(txt_f.value) - 1)
+                var cond1 = parseInt(txt_f.value)
+                var cond2 = 1
                 var imp = window.document.getElementById(`res`)
                 var resp = ``
 
-                while(cond <= Number(txt_f.value)){
-                    resp = `${cond}` 
+                while(cond2 <= cond1){
+                    resp += `${cond2}<br>` 
+                    cond2++
                 }
-                imp.innerHTML = `${resp}<br>`
+                imp.innerHTML = `${resp}<br><br>`
             }
         </script>
     </section>

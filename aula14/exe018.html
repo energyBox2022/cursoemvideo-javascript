@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+
+    <style>
+        body{
+            background-color: rgb(51, 47, 208);
+            color: rgb(251, 37, 118);
+        }
+
+        header > h1{
+            text-align: center;
+        }
+
+        section{
+            background-color: rgb(0, 2, 161);
+            padding: 20px;
+            border-radius: 15px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.711);
+        }
+
+        footer{
+            text-align: center;
+        }
+    </style>
+
+    
+</head>
+
+
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>Número: <input type="number" name="numN" id="numI"> <input type="button" value="Gerar Tabuada" onclick="gerar()"></p>
+        </div>
+        <div id="res">
+            <select name="tabuada" id="seltab" size="10"><option>Digite um número acima</option></select>
+        </div>
+
+
+        <script>
+            function gerar(){
+                var num = window.document.getElementById(`numI`)
+                var numt = Number(num.value)
+                var resp = window.document.getElementById(`res`)
+                var tab = window.document.getElementById(`seltab`)
+                var rel = ``
+
+
+                if(num.value.length == 0){
+                    window.alert(`Erro! Favor digitar um valor`)
+                    
+                    
+                } else {
+                    tab.innerHTML = ``
+                    for(i = 1; i <= 10; i++){
+                        let item = document.createElement(`option`)
+                        item.text = `${numt} x ${i} = ${numt*i}` 
+                        /*Código de seleção para o php: item.value = `tab${c}` */
+                        item.value = `tab${c}`
+                        tab.appendChild(item)              
+                    }
+                }
+                
+                
+
+
+            }
+        </script>
+
+
+
+    </section>
+
+    <footer>
+        <p>
+            &copy;CursoemVídeo
+        </p>
+    </footer>
+
+    
+</body>
+</html>

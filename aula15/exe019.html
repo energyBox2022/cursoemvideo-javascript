@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Números</title>
+
+    <style>
+        body{
+            background-color: rgb(245, 237, 220);
+        }
+
+        header > h1{
+            text-align: center;
+            color: rgb(235, 29, 54);
+        }
+
+        section{
+            background-color: rgb(250, 148, 148);
+            padding: 10px;
+            padding-bottom: 18px;
+            padding-left: 25px;
+            border-radius: 15px;
+            width: 450px;
+            margin: auto;
+            box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.522);
+        }
+
+        #isel{
+            width: 180px;
+        }
+
+        footer > p {
+            text-align: center;
+            color: rgb(118, 118, 118);
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>Número (entre 1 e 100): <input type="number" name="in_numb" id="inum"> <input type="button" value="Adicionar" onclick="adicionar()"></p>
+            <p>
+                <select name="sel" id="isel" size="5"></select><br>
+                <input type="button" value="Finalizar"  onclick="finalizar()">
+            </p>
+        </div>
+        <div id="res"></div>
+
+        <script>
+
+                var num = window.document.getElementById(`inum`)
+                var tnum = parseInt(num.value)
+                var resp = window.document.getElementById(`res`)
+                var selc = window.document.getElementById(`isel`)
+                var vet = []
+
+            function adicionar(){
+            
+                if(num.value.length == 0){
+                    window.alert(`Favor inserir um número inteiro!`)
+
+                } else if(tnum < 1 || tnum > 100){ 
+                    window.alert(`Favor inserir um número inteiro entre 1 e 100`)
+
+                }
+                
+                else {
+                    
+                    vet.push(tnum)
+                    
+                    let item = window.document.createElement(`option`)
+                    item.text = `O valor adicionado foi ${vet}`
+                    selc.appendChild(item)
+                    resp.innerHTML += `O valores adicionados foram ${vet[0]}<br>`
+
+                    function finalizar(){
+                    resp.innerHTML = `O valores adicionados foram ${vet}`
+                    }
+                }  
+            }
+
+
+            
+
+            
+        </script>
+
+
+
+
+    </section>
+
+    <footer>
+        <p>
+            &copy;CursoemVídeo
+        </p>
+    </footer>
+    
+</body>
+</html>

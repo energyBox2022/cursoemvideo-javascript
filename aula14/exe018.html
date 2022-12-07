@@ -56,25 +56,16 @@
                 var tab = window.document.getElementById(`seltab`)
                 var rel = ``
 
-
                 if(num.value.length == 0){
                     window.alert(`Erro! Favor digitar um valor`)
-                    
-                    
                 } else {
                     tab.innerHTML = ``
                     for(i = 1; i <= 10; i++){
                         let item = document.createElement(`option`)
                         item.text = `${numt} x ${i} = ${numt*i}` 
-                        /*Código de seleção para o php: item.value = `tab${c}` */
-                        item.value = `tab${c}`
-                        tab.appendChild(item)              
+                        tab.appendChild(item)           
                     }
                 }
-                
-                
-
-
             }
         </script>
 

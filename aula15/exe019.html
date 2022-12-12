@@ -92,15 +92,14 @@
 
             function finalizar(){
                     let total = vet.length
-
-                    
-
+                  
                     let maior = vet[0]
                     let menor = vet[0]
 
                     for(let pos in vet){
-                        if(vet[pos] > maior)
+                        if(vet[pos] % 2 === 0)
                         maior = vet[pos]
+                        resp.innerHTML = `O maior valor adicionado foi o ${maior}.<br>`
                     }
 
                     resp.innerHTML += `Adicionou-se ${total} números à lista, sendo eles os valores: ${vet}.<br>`

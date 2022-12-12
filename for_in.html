@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo for/in</title>
+
+    <style>
+        body{
+            background-color: rgb(255, 255, 208);
+            color: rgb(165, 85, 236);
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Exemplo de for/in</h1>
+        <div id="res"></div>
+    </header>
+
+    <script>
+        var resl = window.document.getElementById(`res`)
+        var color = [`amarelo `,`verde `,`vermelho `,`azul `]
+
+        for(var vis in color){
+            resl.innerHTML = `Neste exemplo, exibem-se os valores do vetor color através do for/in que são: (${vis} + 1) cores: ${color}.`     
+        }
+    </script>
+
+    
+</body>
+</html>

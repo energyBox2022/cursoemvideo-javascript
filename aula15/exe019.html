@@ -92,14 +92,22 @@
 
             function finalizar(){
                     let total = vet.length
-                    let rev = vet.reverse()
-                    let cre = vet.sort()
-                    let somar = vet.forEach
+
                     
-                    resp.innerHTML = `Adicionou-se ${total} números à lista, sendo eles os valores: ${vet}.<br>
-                    O maior valor informado foi o ${rev[0]}.<br>
-                    O menor valor informado foi o ${cre[0]}.<br>
-                    Somando todos os valores, tem-se `
+
+                    let maior = vet[0]
+                    let menor = vet[0]
+
+                    for(let pos in vet){
+                        if(vet[pos] > maior)
+                        maior = vet[pos]
+                    }
+
+                    resp.innerHTML += `Adicionou-se ${total} números à lista, sendo eles os valores: ${vet}.<br>`
+                    resp.innerHTML += `O maior valor adicionado foi o ${maior}.<br>`
+
+                    
+
                     }
 
 

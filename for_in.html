@@ -11,29 +11,65 @@
             background-color: rgb(255, 255, 208);
             color: rgb(165, 85, 236);
         }
+
+        #i_num{
+            width: 40px;
+        }
+
+
     </style>
 
 
-</head>
+
 
 
 <body>
     <header>
-        <h1>Exemplo de for/in</h1>
-        <div id="res"></div>
+        <h1>Funcionamento do for/in</h1>
     </header>
 
-    <script>
-        var resl = window.document.getElementById(`res`)
-        var color = [`amarelo `,`verde `,`vermelho `,`azul `]
+    <section>
+        <div>
+            Entrada de valores: <input type="number" name="num" id="i_num"> <input type="button" value="Analisar" onclick="analisar()">
+            
+        </div>
+        <div>
+            <p id="res"> </p> <input type="button" value="Resultado" onclick="resultado()">
 
-        for(var vis in color){
-            resl.innerHTML = `Neste exemplo, exibem-se os valores do vetor color através do for/in que são: (${vis} + 1) cores: ${color}.`     
-        }
-
+        </div>
         
-    </script>
+        <script>
+            var num = window.document.getElementById(`i_num`)
+            var resp = window.document.getElementById(`res`)
+            let vet = []
 
-    
+
+            function analisar(){
+                vet.push(Number(num.value))
+                num.value = ``
+                num.focus()
+            }
+
+
+
+            function resultado(){
+                let maior = vet[0]
+                let menor = vet[0]
+                for(let pos in vet){
+                    if(vet[pos] > maior)
+                    maior = vet[pos]
+                    if(vet[pos] < menor)
+                    menor = vet[pos]
+                }
+
+
+                resp.innerHTML += `${vet}<br>`
+                resp.innerHTML += `${maior}<br>`
+                resp.innerHTML += `${menor}<br>`
+
+            }
+            
+        </script>
+    </section>
 </body>
 </html>

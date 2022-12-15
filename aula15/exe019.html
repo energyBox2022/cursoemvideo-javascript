@@ -46,6 +46,7 @@
         <h1>Analisador de Números</h1>
     </header>
 
+
     <section>
         <div>
             <p>Número (entre 1 e 100): <input type="number" name="numb" id="inumb"> <input type="button" value="Adicionar" onclick="adicionar()"></p>
@@ -78,11 +79,9 @@
                     
                     vet.push(parseInt(num.value)) /*Para fazer a adição ao vetor, o push deve estar linkado a variável que está endereçada ao 
                     input number*/
-                    let item = window.document.createElement(`option`)
 
-                    item.text = `O valor adicionado foi ${num.value}`
-                    
-                    
+                    let item = window.document.createElement(`option`)
+                    item.text = `O valor adicionado foi ${num.value}`                                        
                     selc.appendChild(item)
 
                     num.value = ``
@@ -91,32 +90,34 @@
             }
 
             function finalizar(){
-                    let total = vet.length
-                  
-                    let maior = vet[0]
-                    let menor = vet[0]
+                let total = vet.length
+                let maior = vet[0]
+                let menor = vet[0]
+                let soma = 0
+                let media = 0
+                for(let pos in vet){
+                    soma += vet[pos]
+                    if(vet[pos] > maior)
+                    maior = vet[pos]
+                    if(vet[pos] < menor)
+                    menor = vet[pos]
+                }
+                media = soma/total
 
-                    for(let pos in vet){
-                        if(vet[pos] % 2 === 0)
-                        maior = vet[pos]
-                        resp.innerHTML = `O maior valor adicionado foi o ${maior}.<br>`
-                    }
-
-                    resp.innerHTML += `Adicionou-se ${total} números à lista, sendo eles os valores: ${vet}.<br>`
-                    resp.innerHTML += `O maior valor adicionado foi o ${maior}.<br>`
+                resp.innerHTML = ``
+                resp.innerHTML += `A quantidade total de valores adicionados foi de ${total} números<br>`
+                resp.innerHTML += `Os valores adicionados foram os: ${vet}<br>`
+                resp.innerHTML += `O maior valor adicionado foi o ${maior}<br>`
+                resp.innerHTML += `O menor valor adicionado foi o ${menor}<br>`
+                resp.innerHTML += `A soma de todos os valores resulta em: ${soma}<br>`
+                resp.innerHTML += `A média de todos os valores adicionados é ${media}<br>`
                     
-                    }
-
-
-            
-
+            }
             
         </script>
 
-
-
-
     </section>
+    
 
     <footer>
         <p>
